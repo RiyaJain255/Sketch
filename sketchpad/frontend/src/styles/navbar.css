@@ -1,0 +1,84 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 48px;
+  background: rgba(22, 33, 62, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  z-index: 20;
+}
+
+.navbar-left, .navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-size: 16px;
+  color: var(--text);
+  letter-spacing: -.01em;
+  padding: 4px 8px;
+  border-radius: var(--radius);
+  transition: color .15s;
+}
+
+.nav-logo:hover { color: var(--gold); }
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: var(--text-dim);
+  padding: 5px 10px;
+  border-radius: var(--radius);
+  transition: background .15s, color .15s;
+  letter-spacing: .05em;
+}
+
+.nav-link:hover { background: var(--surface); color: var(--text); }
+.nav-link.active { color: var(--gold); }
+
+.nav-user {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  color: var(--text-dim);
+  padding: 4px 10px;
+  border-left: 1px solid var(--border);
+  margin-left: 4px;
+}
+
+.nav-avatar {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--border);
+}
+
+.nav-logout {
+  color: var(--text-dim);
+  padding: 6px;
+  border-radius: var(--radius);
+  transition: background .15s, color .15s;
+}
+
+.nav-logout:hover { background: rgba(224,92,92,.15); color: var(--danger); }
+
+/* Push drawing page down when navbar present */
+.drawing-page {
+  padding-top: 48px;
+}

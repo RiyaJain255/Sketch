@@ -1,0 +1,22 @@
+# Render deployment config for SketchPad backend
+# https://render.com/docs/yaml-spec
+
+services:
+  - type: web
+    name: sketchpad-api
+    env: node
+    plan: free
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false       # Set manually in Render dashboard
+      - key: JWT_SECRET
+        generateValue: true
+      - key: GOOGLE_CLIENT_ID
+        sync: false       # Set manually in Render dashboard
+      - key: CLIENT_URL
+        sync: false       # Your Vercel frontend URL
